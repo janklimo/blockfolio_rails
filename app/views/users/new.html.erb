@@ -1,0 +1,5 @@
+Join <%= @user_count %> other users of Blockfolio skill for Alexa!
+<%= form_for @user do |f| %>
+  Blockfolio token: <%= f.text_field :blockfolio_token %><br />
+  <%= f.submit 'Submit' %>
+<% end %>
