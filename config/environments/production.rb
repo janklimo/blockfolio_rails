@@ -82,20 +82,6 @@ Rails.application.configure do
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
-  # More compact logging output
-  # See: https://github.com/roidrage/lograge
-  config.lograge.enabled = true
-  config.lograge.custom_options = ->(event) { { time: event.time } }
-  config.lograge.custom_payload do |controller|
-    { user_id: controller.current_user.id } if controller.current_user
-  end
-
-  if ENV['RAILS_LOG_TO_STDOUT'].present?
-    logger           = ActiveSupport::Logger.new(STDOUT)
-    logger.formatter = config.log_formatter
-    config.logger    = ActiveSupport::TaggedLogging.new(logger)
-  end
-
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
