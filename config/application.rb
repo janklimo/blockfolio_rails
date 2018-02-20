@@ -17,9 +17,6 @@ module Blockfolio
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
-    # Use Sidekiq as ActiveJob backend
-    config.active_job.queue_adapter = :sidekiq
-
     # Configure generators, see: http://guides.rubyonrails.org/generators.html
     config.generators do |g|
       # Create appropriate tests in spec/ not test/

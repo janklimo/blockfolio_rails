@@ -13,7 +13,6 @@ require 'spec_helper'
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 require 'webmock/rspec'
-require 'sidekiq/testing'
 
 # NOTE: System tests break if we don't allow this!
 WebMock.disable_net_connect!(allow_localhost: true)
@@ -49,7 +48,6 @@ RSpec.configure do |config|
   config.before do
     # Reset this to the default so you don't need to clean up specs that want
     # inline jobs.
-    Sidekiq::Testing.fake!
     # Avoid inadvertent leftover mail.
     ActionMailer::Base.deliveries.clear
   end
