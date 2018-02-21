@@ -10,16 +10,11 @@ class UsersController < ApplicationController
   end
 
   def create
-    if (token = user_params['blockfolio_token']).blank?
-      flash[:alert] = "Please insert your Blockfolio Token"
-      redirect_to root_url
-      return
-    end
-
+    token = user_params['blockfolio_token']
     validator = BlockfolioToken.new(token)
 
     if validator.valid?
-      user = User.find_or_create_by(user_params)
+      user = User.find_or_create_by(token)
       session[:user_id] = user.id
       redirect_to session[:user_return_to]
     else
