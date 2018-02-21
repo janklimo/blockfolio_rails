@@ -1,5 +1,22 @@
-Join <%= @user_count %> other users of Blockfolio skill for Alexa!
-<%= form_for @user do |f| %>
-  Blockfolio token: <%= f.text_field :blockfolio_token %><br />
-  <%= f.submit 'Submit' %>
-<% end %>
+<header class="page-header" role="banner">
+  <%= image_tag("blockfolio_logo.png") %>
+</header>
+
+<main role="main">
+  <p class="h4">
+    Join <%= @user_count %> other users of Blockfolio skill for Alexa!
+  </p>
+
+  <div class="actions">
+    <p class="intro">Please insert your Token and hit Submit. You can find your token under Blockfolio Settings.</p>
+    <%= form_for @user, html: { class: 'form-horizontal', role: 'form' } do |f| %>
+      <div class="form-group">
+        <%= f.label :blockfolio_token, 'Blockfolio Token', class: 'col-sm-3 control-label' %>
+        <div class="col-sm-9">
+          <%= f.text_field :blockfolio_token, class: 'form-control' %>
+        </div>
+      </div>
+      <%= f.submit 'Submit', class: "btn btn-success btn-lg btn-block" %>
+    <% end %>
+  </div>
+</main>

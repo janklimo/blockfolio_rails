@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
+  layout 'doorkeeper/application'
+
   def new
     @user = User.new
     @user_count = User.count
