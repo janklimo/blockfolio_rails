@@ -1,5 +1,5 @@
 <header class="page-header" role="banner">
-  <%= image_tag("blockfolio_logo.png") %>
+  <%= image_tag "blockfolio_logo.png" %>
 </header>
 
 <main role="main">
@@ -15,9 +15,25 @@
         <%= f.label :blockfolio_token, 'Blockfolio Token', class: 'col-sm-3 control-label' %>
         <div class="col-sm-9">
           <%= f.text_field :blockfolio_token, class: 'form-control' %>
+          <span class="help-block">
+            See below for instructions on where to find your Token.
+          </span>
         </div>
       </div>
       <%= f.submit 'Submit', class: "btn btn-success btn-lg btn-block" %>
     <% end %>
   </div>
 </main>
+
+<%- content_for :extras do  %>
+  <div class="extras">
+    <header class="page-header" role="banner">
+      <h3>Help</h3>
+    </header>
+    <p>You can find your Blockfolio Token at the very bottom of the Settings
+    screen:</p>
+    <div class="text-center">
+      <%= image_tag "blockfolio_screenshot.png", class: 'screenshot' %>
+    </div>
+  </div>
+<%- end %>
