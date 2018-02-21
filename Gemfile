@@ -37,6 +37,7 @@ gem 'doorkeeper'
 
 # Security
 gem 'secure_headers', require: false
+gem 'rest-client'
 
 group :production do
   # Remove this if the app is not hosted on Heroku

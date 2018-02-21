@@ -12,9 +12,9 @@
 </head>
   <body>
     <div id="container">
-      <%- if flash[:notice].present? %>
-        <div class="alert alert-info">
-          <%= flash[:notice] %>
+      <%- if flash[:alert].present? %>
+        <div class="alert alert-danger">
+          <%= flash[:alert] %>
         </div>
       <% end -%>
 
