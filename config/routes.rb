@@ -11,5 +11,6 @@ Rails.application.routes.draw do
     end
   end
 
+  get '/privacy', :to => redirect('/privacypolicy.htm')
   root to: 'users#new'
 end
