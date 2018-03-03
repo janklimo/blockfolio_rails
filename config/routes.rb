@@ -5,10 +5,8 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :credentials do
-        collection do
-          get :me
-        end
+      namespace :credentials do
+        get :me
       end
     end
   end

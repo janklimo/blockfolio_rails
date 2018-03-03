@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class UsersController < ApplicationController
+class UsersController < Doorkeeper::ApplicationController
   layout 'doorkeeper/application'
 
   def new
@@ -14,9 +14,9 @@ class UsersController < ApplicationController
     validator = BlockfolioToken.new(token)
 
     if validator.valid?
-      user = User.find_or_create_by(token)
+      user = User.find_or_create_by(blockfolio_token: token)
       session[:user_id] = user.id
-      redirect_to session[:user_return_to]
+      redirect_to session[:user_return_to] if session[:user_return_to]
     else
       flash[:alert] = "That doesn't seem to be a valid Blockfolio Token"
       redirect_to root_url
