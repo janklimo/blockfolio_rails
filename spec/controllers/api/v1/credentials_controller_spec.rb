@@ -24,7 +24,6 @@ describe Api::V1::CredentialsController do
     end
 
     it 'returns the user as json' do
-      p api_v1_credentials_me_url
       get api_v1_credentials_me_url,
         headers: { 'Authorization' => "Bearer #{ @token.token }" }
       resp = JSON.parse(response.body)
