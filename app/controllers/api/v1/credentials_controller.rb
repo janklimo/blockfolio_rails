@@ -2,7 +2,7 @@ class Api::V1::CredentialsController < ApplicationController
   before_action :doorkeeper_authorize!
 
   def me
-    respond_with current_resource_owner
+    render json: UserSerializer.new(current_resource_owner).serialized_json
   end
 
   private

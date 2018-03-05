@@ -27,7 +27,7 @@ gem 'sass-rails', '~> 5.0.4'
 gem 'uglifier', '>= 1.3.0'
 
 # API serialization
-gem 'jsonapi-rails'
+gem 'fast_jsonapi'
 
 # App configuration
 gem 'figaro'
